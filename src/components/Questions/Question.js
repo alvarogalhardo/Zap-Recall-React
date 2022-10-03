@@ -14,16 +14,16 @@ export default function Question({ i, q, answered, setAnswered }) {
   const [funct, setFunct] = useState(() => open);
   const [display, setDisplay] = useState("none");
   const [decor, setDecor] = useState("inherit");
-  const [dataBtn, setDataBtn] = useState('flashcard-show-btn')
-  const [dataQuest, setDataQuest] = useState('flashcard-index-item')
+  const [dataBtn, setDataBtn] = useState("flashcard-show-btn");
+  const [dataQuest, setDataQuest] = useState("flashcard-index-item");
 
   function open() {
     setButton(Opened);
     setText(q.question);
     setImage(turnImg);
     setFunct(() => turn);
-    setDataBtn('flashcard-turn-btn');
-    setDataQuest('flashcard-question');
+    setDataBtn("flashcard-turn-btn");
+    setDataQuest("flashcard-question");
   }
 
   function turn() {
@@ -39,7 +39,6 @@ export default function Question({ i, q, answered, setAnswered }) {
     setImage(x);
     setAnswered([...answered, x]);
     disable();
-    
   }
 
   function almost() {
@@ -56,7 +55,7 @@ export default function Question({ i, q, answered, setAnswered }) {
     disable();
   }
 
-  function disable (){
+  function disable() {
     setButton(Closed);
     setFunct(null);
     setDecor("line-through");
@@ -68,17 +67,16 @@ export default function Question({ i, q, answered, setAnswered }) {
   return (
     <Button data-identifier="flashcard" color={color} decor={decor}>
       <p data-identifier={dataQuest}>{text}</p>
-      <img
-        src={image}
-        alt=""
-        data-identifier={dataBtn}
-        onClick={funct}
-      />
+      <img src={image} alt="" data-identifier={dataBtn} onClick={funct} />
       <Container display={display}>
         <Not display={display} onClick={not} data-identifier="forgot-btn">
           Não lembrei{" "}
         </Not>
-        <Almost display={display} onClick={almost} data-identifier="almost-forgot-btn">
+        <Almost
+          display={display}
+          onClick={almost}
+          data-identifier="almost-forgot-btn"
+        >
           Quase lembrei
         </Almost>
         <Zap display={display} onClick={zap} data-identifier="zap-btn">

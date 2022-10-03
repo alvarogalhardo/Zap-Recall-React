@@ -14,34 +14,31 @@ export default function Start() {
   const [deck, setDeck] = React.useState([]);
   const [display, setDisplay] = React.useState("flex");
   const [displayContent, setDisplayContent] = React.useState("none");
-  
-  function handleChange(e) {
-    console.log(e.value)
-    setDeck(e.value);
-  }
 
-  function renderDeck(){
-    setDisplay('none');
-    setDisplayContent('flex');
+  function renderDeck() {
+    setDisplay("none");
+    setDisplayContent("flex");
   }
 
   return (
     <>
-    <ContainerStart display={display}>
-      <img src={logo} alt="" />
-      <h1>ZapRecall</h1>
-     
+      <ContainerStart display={display}>
+        <img src={logo} alt="" />
+        <h1>ZapRecall</h1>
+
         <Select
           name="Deck"
           placeholder="Escolha seu deck"
           options={options}
-          onChange={handleChange}
+          onChange={(e) => setDeck(e.value)}
+          data-identifier="deck-selector"
         ></Select>
-        <StartButton onClick={renderDeck}>Iniciar Recall!</StartButton>
+        <StartButton data-identifier="start-btn" onClick={renderDeck}>
+          Iniciar Recall!
+        </StartButton>
         <Container deck={deck} display={displayContent} />
-    
-    </ContainerStart>
-    <Container deck={deck} display={displayContent} />
+      </ContainerStart>
+      <Container deck={deck} display={displayContent} />
     </>
   );
 }

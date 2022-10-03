@@ -28,4 +28,4 @@ const REACT = [
   },
 ];
 
-export default REACT
+export default REACT;

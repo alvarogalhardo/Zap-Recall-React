@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
-export default function Footer({ answered , deck}) {
+export default function Footer({ answered, deck }) {
   return (
     <Foot data-identifier="flashcard-counter">
       {answered.length}/{deck.length} CONCLUÍDOS
       <Container>
-      {answered.map((element,i)=><img src={element} alt="" key={i}/>)}
+        {answered.map((element, i) => (
+          <img src={element} alt="" key={i} />
+        ))}
       </Container>
     </Foot>
   );
@@ -31,5 +33,8 @@ const Container = styled.div`
   display: flex;
   width: 80%;
   justify-content: center;
-  background-color: aliceblue;
+  margin-top: 5px;
+  img {
+    margin: 0 3px 0 3px;
+  }
 `;

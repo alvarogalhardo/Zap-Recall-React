@@ -3,7 +3,7 @@ import logo from "../assets/img/logo.png";
 
 export default function Logo() {
   return (
-    <Header >
+    <Header>
       <img src={logo} alt="logo"></img>
       <h1>ZapRecall</h1>
     </Header>
