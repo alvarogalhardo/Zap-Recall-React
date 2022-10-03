@@ -1,10 +1,10 @@
-import Container from "./Container";
 import {createGlobalStyle} from "styled-components";
+import Start from "./Start";
 export default function App() {
   return (
     <>
       <GlobalStyle />
-      <Container />
+      <Start />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import deck from "./Questions/Deck";
-export default function Footer({ answered }) {
+
+export default function Footer({ answered , deck}) {
   return (
     <Foot data-identifier="flashcard-counter">
       {answered.length}/{deck.length} CONCLUÍDOS
